@@ -1,5 +1,23 @@
 # Firecrawl Demo Project
-## Scrapping Ruby on Rails Guides to use in RAG
+Scrappes Ruby on Rails Guides to use in RAG
+
+## Running the scraper
+
+- Create a `.env` file in the project root with your Firecrawl API key:
+
+```
+FIRECRAWL_API_KEY=your_api_key_here
+```
+
+- Install dependencies and run the script:
+
+```bash
+npm install
+npm start
+```
+
+
+## How to use Firecrawl in NodeJS
 
 ### Search the web first
 **CLI**
@@ -54,23 +72,4 @@ const result = await app.scrape("https://guides.rubyonrails.org/v8.1/getting_sta
 await app.interact(result.metadata.scrapeId, {
   prompt: "Click link 'Active Record Basics'"
 });
-```
-
-### Run the scraper
-
-- Create a `.env` file in the project root with your Firecrawl API key:
-
-```
-FIRECRAWL_API_KEY=your_api_key_here
-```
-
-- Install dependencies and run the script:
-
-```bash
-npm install
-npm start
-```
-
-- Output: the script writes scraped pages into the `scraped/` directory (one folder per each markdown level 3 header).
-
 ```
